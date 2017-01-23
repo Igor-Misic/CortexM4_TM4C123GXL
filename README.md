@@ -11,3 +11,7 @@ https://www.sparkfun.com/products/13762
 Video: 
 https://www.youtube.com/watch?v=1-T6J-lMQaI
 
+
+![alt text](Components.png "Components diagram")
+![alt text](SPIReadWriteData.png "SPI Read and Write sequence diagram")
+![alt text](API - GetVoltage.png "Get voltage sequence diagram")

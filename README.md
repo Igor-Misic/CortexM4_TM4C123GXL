@@ -12,7 +12,7 @@ Video:
 https://www.youtube.com/watch?v=1-T6J-lMQaI
 
 
-ADC messure from 0 - 3.3V and return digital value 0-4095. For lipo or lion battery voltage messuring, change ADC referent voltage. 
+ADC messure from 0 - 3.3V and return digital value 0-4095. For messuring LiPo or Lion battery, change ADC referent voltage. 
 
 
 ![alt text](Components.png "Components diagram")

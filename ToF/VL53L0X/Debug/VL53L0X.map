@@ -1,0 +1,627 @@
+******************************************************************************
+                  TI ARM Linker Unix v18.1.1                   
+******************************************************************************
+>> Linked Sun Jun 10 14:37:13 2018
+
+OUTPUT FILE NAME:   <VL53L0X.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 000074a5
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  000079ca  00038636  R  X
+  SRAM                  20000000   00008000  000004bc  00007b44  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000079cc   000079cc    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    0000734e   0000734e    r-x .text
+  000075bc    000075bc    0000013c   0000013c    r-- .const
+  000076f8    000076f8    000002d4   000002d4    r-- .cinit
+20000000    20000000    000004c0   00000000    rw-
+  20000000    20000000    000002bc   00000000    rw- .data
+  200002c0    200002c0    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    0000734e     
+                  0000026c    00002842     vl53l0x_api.obj (.text)
+                  00002aae    00000002     --HOLE-- [fill = 0]
+                  00002ab0    000021c2     vl53l0x_api_core.obj (.text)
+                  00004c72    00000002     --HOLE-- [fill = 0]
+                  00004c74    00001220     vl53l0x_api_calibration.obj (.text)
+                  00005e94    000009f0     vl53l0x_api_strings.obj (.text)
+                  00006884    00000360     vl53l0x_i2c_comms.obj (.text)
+                  00006be4    0000030e     vl53l0x_platform.obj (.text)
+                  00006ef2    00000142     main.obj (.text)
+                  00007034    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00007166    00000002     --HOLE-- [fill = 0]
+                  00007168    00000110                   : sysctl.obj (.text:SysCtlClockGet)
+                  00007278    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00007314    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  0000737c    00000050     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralReset)
+                  000073cc    0000004c                   : i2c.obj (.text:I2CMasterInitExpClk)
+                  00007418    00000048                   : gpio.obj (.text:GPIOPinConfigure)
+                  00007460    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  000074a4    00000038                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  000074dc    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00007510    0000002a                   : gpio.obj (.text:GPIODirModeSet)
+                  0000753a    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : strcpy.c.obj (.text:strcpy)
+                  0000754e    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeI2C)
+                  00007560    00000012                   : gpio.obj (.text:GPIOPinTypeI2CSCL)
+                  00007572    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00007580    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  0000758c    0000000a     driverlib.lib : i2c.obj (.text:I2CMasterEnable)
+                  00007596    00000008                   : i2c.obj (.text:I2CMasterBusy)
+                  0000759e    00000008                   : i2c.obj (.text:I2CMasterSlaveAddrSet)
+                  000075a6    00000004                   : i2c.obj (.text:I2CMasterControl)
+                  000075aa    00000004                   : i2c.obj (.text:I2CMasterDataGet)
+                  000075ae    00000004                   : i2c.obj (.text:I2CMasterDataPut)
+                  000075b2    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  000075b6    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    000075bc    0000013c     
+                  000075bc    00000090     driverlib.lib : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  0000764c    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  000076b8    00000040     vl53l0x_api.obj (.const:$P$T0$1)
+
+.cinit     0    000076f8    000002d4     
+                  000076f8    000002c1     (.cinit..data.load) [load image, compression = lzss]
+                  000079b9    00000003     --HOLE-- [fill = 0]
+                  000079bc    00000008     (__TI_handler_table)
+                  000079c4    00000008     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.data      0    20000000    000002bc     UNINITIALIZED
+                  20000000    000001b6     vl53l0x_api.obj (.data:InterruptThresholdSettings)
+                  200001b6    000000f3     vl53l0x_api.obj (.data:DefaultTuningSettings)
+                  200002a9    00000003     --HOLE--
+                  200002ac    00000010     vl53l0x_api_calibration.obj (.data:refArrayQuadrants)
+
+.stack     0    200002c0    00000200     UNINITIALIZED
+                  200002c0    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  200002c4    000001fc     --HOLE--
+
+MODULE SUMMARY
+
+       Module                         code    ro data   rw data
+       ------                         ----    -------   -------
+    ./
+       tm4c123gh6pm_startup_ccs.obj   12      620       0      
+       main.obj                       322     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         334     620       0      
+                                                               
+    ./core/src/
+       vl53l0x_api.obj                10306   64        681    
+       vl53l0x_api_core.obj           8642    0         0      
+       vl53l0x_api_calibration.obj    4640    0         16     
+       vl53l0x_api_strings.obj        2544    0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         26132   64        697    
+                                                               
+    ./platform/src/
+       vl53l0x_i2c_comms.obj          864     0         0      
+       vl53l0x_platform.obj           782     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         1646    0         0      
+                                                               
+    /home/igor/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.1.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.asm.obj              156     0         0      
+       copy_decompress_lzss.c.obj     104     0         0      
+       autoinit.c.obj                 68      0         0      
+       boot_cortex_m.c.obj            56      0         0      
+       strcpy.c.obj                   20      0         0      
+       copy_decompress_none.c.obj     14      0         0      
+       exit.c.obj                     4       0         0      
+       pre_init.c.obj                 4       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         426     0         0      
+                                                               
+    /home/igor/ti/tirex-content/TivaWare_C_Series-2.1.3.156/driverlib/ccs/Debug/driverlib.lib
+       gpio.obj                       456     144       0      
+       sysctl.obj                     404     108       0      
+       i2c.obj                        114     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         974     252       0      
+                                                               
+       Stack:                         0       0         512    
+       Linker Generated:              0       721       0      
+    +--+------------------------------+-------+---------+---------+
+       Grand Total:                   29512   1657      1209   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000079c4 records: 1, size/record: 8, table size: 8
+	.data: load addr=000076f8, load size=000002c1 bytes, run addr=20000000, run size=000002bc bytes, compression=lzss
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 000079bc records: 2, size/record: 4, table size: 8
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                               
+-------   ----                                               
+000075b7  C$$EXIT                                            
+200001b6  DefaultTuningSettings                              
+00007511  GPIODirModeSet                                     
+00007035  GPIOPadConfigSet                                   
+00007419  GPIOPinConfigure                                   
+0000754f  GPIOPinTypeI2C                                     
+00007561  GPIOPinTypeI2CSCL                                  
+00007597  I2CMasterBusy                                      
+000075a7  I2CMasterControl                                   
+000075ab  I2CMasterDataGet                                   
+000075af  I2CMasterDataPut                                   
+0000758d  I2CMasterEnable                                    
+000073cd  I2CMasterInitExpClk                                
+0000759f  I2CMasterSlaveAddrSet                              
+20000000  InterruptThresholdSettings                         
+00007581  ResetISR                                           
+00007169  SysCtlClockGet                                     
+000074dd  SysCtlPeripheralEnable                             
+0000737d  SysCtlPeripheralReset                              
+00001d05  VL53L0X_CheckAndLoadInterruptSettings              
+0000281f  VL53L0X_ClearInterruptMask                         
+00000605  VL53L0X_DataInit                                   
+000028e3  VL53L0X_EnableInterruptMask                        
+00000325  VL53L0X_GetDeviceErrorStatus                       
+00000355  VL53L0X_GetDeviceErrorString                       
+00000307  VL53L0X_GetDeviceInfo                              
+00000e1d  VL53L0X_GetDeviceMode                              
+00000cd9  VL53L0X_GetDeviceParameters                        
+00001bd3  VL53L0X_GetDmaxCalParameters                       
+00000e6f  VL53L0X_GetFractionEnable                          
+000025b7  VL53L0X_GetGpioConfig                              
+000022a3  VL53L0X_GetHistogramMeasurementData                
+00000ebb  VL53L0X_GetHistogramMode                           
+000013e3  VL53L0X_GetInterMeasurementPeriodMilliSeconds      
+000028a3  VL53L0X_GetInterruptMaskStatus                     
+000026ff  VL53L0X_GetInterruptThresholds                     
+000019d3  VL53L0X_GetLimitCheckCurrent                       
+000017ab  VL53L0X_GetLimitCheckEnable                        
+00001607  VL53L0X_GetLimitCheckInfo                          
+0000162d  VL53L0X_GetLimitCheckStatus                        
+000018af  VL53L0X_GetLimitCheckValue                         
+00000551  VL53L0X_GetLinearityCorrectiveGain                 
+00002351  VL53L0X_GetMaxNumberOfROIZones                     
+00001fc1  VL53L0X_GetMeasurementDataReady                    
+00002261  VL53L0X_GetMeasurementRefSignal                    
+00000ef1  VL53L0X_GetMeasurementTimingBudgetMicroSeconds     
+000015ed  VL53L0X_GetNumberOfLimitCheck                      
+00002335  VL53L0X_GetNumberOfROIZones                        
+00001255  VL53L0X_GetNumberOfSequenceSteps                   
+000004e1  VL53L0X_GetOffsetCalibrationDataMicroMeter         
+00000399  VL53L0X_GetPalErrorString                          
+0000029b  VL53L0X_GetPalSpecVersion                          
+000003dd  VL53L0X_GetPalState                                
+000003bb  VL53L0X_GetPalStateString                          
+00000481  VL53L0X_GetPowerMode                               
+000002c9  VL53L0X_GetProductRevision                         
+00000377  VL53L0X_GetRangeStatusString                       
+00002055  VL53L0X_GetRangingMeasurementData                  
+000015c5  VL53L0X_GetRefCalibration                          
+00002a5f  VL53L0X_GetReferenceSpads                          
+00001167  VL53L0X_GetSequenceStepEnable                      
+000011ad  VL53L0X_GetSequenceStepEnables                     
+00001335  VL53L0X_GetSequenceStepTimeout                     
+00001271  VL53L0X_GetSequenceStepsInfo                       
+000029e7  VL53L0X_GetSpadAmbientDamperFactor                 
+00002947  VL53L0X_GetSpadAmbientDamperThreshold              
+0000275b  VL53L0X_GetStopCompletedStatus                     
+000005a3  VL53L0X_GetTotalSignalRate                         
+000008a9  VL53L0X_GetTuningSettingBuffer                     
+0000058b  VL53L0X_GetUpperLimitMilliMeter                    
+00000f39  VL53L0X_GetVcselPulsePeriod                        
+0000026d  VL53L0X_GetVersion                                 
+00001b1b  VL53L0X_GetWrapAroundCheckEnable                   
+000014a5  VL53L0X_GetXTalkCompensationEnable                 
+0000153b  VL53L0X_GetXTalkCompensationRateMegaCps            
+00006be5  VL53L0X_LockSequenceAccess                         
+00001cdd  VL53L0X_PerformOffsetCalibration                   
+00001c6f  VL53L0X_PerformRefCalibration                      
+00002a87  VL53L0X_PerformRefSpadManagement                   
+00001c57  VL53L0X_PerformSingleHistogramMeasurement          
+00001bff  VL53L0X_PerformSingleMeasurement                   
+000022bb  VL53L0X_PerformSingleRangingMeasurement            
+00001cb5  VL53L0X_PerformXTalkCalibration                    
+00001c99  VL53L0X_PerformXTalkMeasurement                    
+00006ec9  VL53L0X_PollingDelay                               
+00006e03  VL53L0X_RdByte                                     
+00006e87  VL53L0X_RdDWord                                    
+00006e45  VL53L0X_RdWord                                     
+00006c65  VL53L0X_ReadMulti                                  
+00000b65  VL53L0X_ResetDevice                                
+000005d9  VL53L0X_SetDeviceAddress                           
+00000dd5  VL53L0X_SetDeviceMode                              
+00000bed  VL53L0X_SetDeviceParameters                        
+00001b73  VL53L0X_SetDmaxCalParameters                       
+0000236d  VL53L0X_SetGpioConfig                              
+00000571  VL53L0X_SetGroupParamHold                          
+00000ea1  VL53L0X_SetHistogramMode                           
+00001387  VL53L0X_SetInterMeasurementPeriodMilliSeconds      
+000026a7  VL53L0X_SetInterruptThresholds                     
+00001671  VL53L0X_SetLimitCheckEnable                        
+000017f5  VL53L0X_SetLimitCheckValue                         
+000004ff  VL53L0X_SetLinearityCorrectiveGain                 
+00000ed3  VL53L0X_SetMeasurementTimingBudgetMicroSeconds     
+0000230d  VL53L0X_SetNumberOfROIZones                        
+000004c3  VL53L0X_SetOffsetCalibrationDataMicroMeter         
+000003fd  VL53L0X_SetPowerMode                               
+00000e3b  VL53L0X_SetRangeFractionEnable                     
+0000159b  VL53L0X_SetRefCalibration                          
+00002a39  VL53L0X_SetReferenceSpads                          
+00000f5f  VL53L0X_SetSequenceStepEnable                      
+00001293  VL53L0X_SetSequenceStepTimeout                     
+0000298f  VL53L0X_SetSpadAmbientDamperFactor                 
+000028fb  VL53L0X_SetSpadAmbientDamperThreshold              
+0000085d  VL53L0X_SetTuningSettingBuffer                     
+00000f0f  VL53L0X_SetVcselPulsePeriod                        
+00001aa1  VL53L0X_SetWrapAroundCheckEnable                   
+0000143f  VL53L0X_SetXTalkCompensationEnable                 
+000014cb  VL53L0X_SetXTalkCompensationRateMegaCps            
+00001dcb  VL53L0X_StartMeasurement                           
+000008dd  VL53L0X_StaticInit                                 
+00001f3d  VL53L0X_StopMeasurement                            
+00006bf9  VL53L0X_UnlockSequenceAccess                       
+00006d81  VL53L0X_UpdateByte                                 
+00000b49  VL53L0X_WaitDeviceBooted                           
+00002039  VL53L0X_WaitDeviceReadyForNewMeasurement           
+00006cb9  VL53L0X_WrByte                                     
+00006d3f  VL53L0X_WrDWord                                    
+00006cf9  VL53L0X_WrWord                                     
+00006c0d  VL53L0X_WriteMulti                                 
+0000505d  VL53L0X_apply_offset_adjustment                    
+00004369  VL53L0X_calc_dmax                                  
+0000349b  VL53L0X_calc_macro_period_ps                       
+00004569  VL53L0X_calc_sigma_estimate                        
+00003547  VL53L0X_calc_timeout_mclks                         
+00003591  VL53L0X_calc_timeout_us                            
+00005e95  VL53L0X_check_part_used                            
+0000351d  VL53L0X_decode_timeout                             
+00002b67  VL53L0X_decode_vcsel_period                        
+00002c4f  VL53L0X_device_read_strobe                         
+000034c9  VL53L0X_encode_timeout                             
+00002b89  VL53L0X_encode_vcsel_period                        
+00005fb7  VL53L0X_get_device_error_string                    
+00005efd  VL53L0X_get_device_info                            
+00002ccd  VL53L0X_get_info_from_device                       
+000066e7  VL53L0X_get_limit_check_info                       
+00003fc9  VL53L0X_get_measurement_timing_budget_micro_seconds
+00004fe5  VL53L0X_get_offset_calibration_data_micro_meter    
+00006325  VL53L0X_get_pal_error_string                       
+00004919  VL53L0X_get_pal_range_status                       
+00006463  VL53L0X_get_pal_state_string                       
+000060bb  VL53L0X_get_range_status_string                    
+00005e4b  VL53L0X_get_ref_calibration                        
+000059cb  VL53L0X_get_reference_spads                        
+000064f1  VL53L0X_get_sequence_steps_info                    
+00004329  VL53L0X_get_total_signal_rate                      
+000042d5  VL53L0X_get_total_xtalk_rate                       
+00003db7  VL53L0X_get_vcsel_pulse_period                     
+00006885  VL53L0X_i2c_init                                   
+00002bab  VL53L0X_isqrt                                      
+000040fd  VL53L0X_load_tuning_settings                       
+00002b11  VL53L0X_measurement_poll_for_completion            
+00004e1f  VL53L0X_perform_offset_calibration                 
+00005cbf  VL53L0X_perform_phase_calibration                  
+00005d89  VL53L0X_perform_ref_calibration                    
+000054e5  VL53L0X_perform_ref_spad_management                
+00005a73  VL53L0X_perform_single_ref_calibration             
+00005bef  VL53L0X_perform_vhv_calibration                    
+00004c75  VL53L0X_perform_xtalk_calibration                  
+00002c11  VL53L0X_quadrature_sum                             
+00006af1  VL53L0X_read_byte                                  
+00006b75  VL53L0X_read_dword                                 
+0000697b  VL53L0X_read_multi                                 
+00006b0f  VL53L0X_read_word                                  
+00005ad7  VL53L0X_ref_calibration_io                         
+00002ab1  VL53L0X_reverse_bytes                              
+00003e1d  VL53L0X_set_measurement_timing_budget_micro_seconds
+00004f71  VL53L0X_set_offset_calibration_data_micro_meter    
+00005e07  VL53L0X_set_ref_calibration                        
+000058a1  VL53L0X_set_reference_spads                        
+00003927  VL53L0X_set_vcsel_pulse_period                     
+00006a57  VL53L0X_write_byte                                 
+00006ab1  VL53L0X_write_dword                                
+000068cd  VL53L0X_write_multi                                
+00006a79  VL53L0X_write_word                                 
+200004c0  __STACK_END                                        
+00000200  __STACK_SIZE                                       
+200004c0  __STACK_TOP                                        
+000079c4  __TI_CINIT_Base                                    
+000079cc  __TI_CINIT_Limit                                   
+000079bc  __TI_Handler_Table_Base                            
+000079c4  __TI_Handler_Table_Limit                           
+00007461  __TI_auto_init_nobinit_nopinit                     
+00007315  __TI_decompress_lzss                               
+00007573  __TI_decompress_none                               
+ffffffff  __TI_pprof_out_hndl                                
+ffffffff  __TI_prof_data_size                                
+ffffffff  __TI_prof_data_start                               
+00000000  __TI_static_base__                                 
+00007279  __aeabi_memcpy                                     
+00007279  __aeabi_memcpy4                                    
+00007279  __aeabi_memcpy8                                    
+ffffffff  __binit__                                          
+ffffffff  __c_args__                                         
+UNDEFED   __mpu_init                                         
+200002c0  __stack                                            
+000074a5  _c_int00_noargs                                    
+UNDEFED   _system_post_cinit                                 
+000075b3  _system_pre_init                                   
+000075b7  abort                                              
+ffffffff  binit                                              
+00005205  count_enabled_spads                                
+00005343  enable_ref_spads                                   
+000051a5  enable_spad_bit                                    
+00000000  g_pfnVectors                                       
+000050bf  get_next_good_spad                                 
+00005327  get_ref_spad_map                                   
+000035df  get_sequence_step_timeout                          
+0000517b  is_aperture                                        
+00006fe3  main                                               
+00007279  memcpy                                             
+00005435  perform_ref_signal_measurement                     
+00006ef3  rangingTest                                        
+200002ac  refArrayQuadrants                                  
+000010cd  sequence_step_enabled                              
+0000530b  set_ref_spad_map                                   
+00003769  set_sequence_step_timeout                          
+0000753b  strcpy                                             
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                               
+-------   ----                                               
+00000000  __TI_static_base__                                 
+00000000  g_pfnVectors                                       
+00000200  __STACK_SIZE                                       
+0000026d  VL53L0X_GetVersion                                 
+0000029b  VL53L0X_GetPalSpecVersion                          
+000002c9  VL53L0X_GetProductRevision                         
+00000307  VL53L0X_GetDeviceInfo                              
+00000325  VL53L0X_GetDeviceErrorStatus                       
+00000355  VL53L0X_GetDeviceErrorString                       
+00000377  VL53L0X_GetRangeStatusString                       
+00000399  VL53L0X_GetPalErrorString                          
+000003bb  VL53L0X_GetPalStateString                          
+000003dd  VL53L0X_GetPalState                                
+000003fd  VL53L0X_SetPowerMode                               
+00000481  VL53L0X_GetPowerMode                               
+000004c3  VL53L0X_SetOffsetCalibrationDataMicroMeter         
+000004e1  VL53L0X_GetOffsetCalibrationDataMicroMeter         
+000004ff  VL53L0X_SetLinearityCorrectiveGain                 
+00000551  VL53L0X_GetLinearityCorrectiveGain                 
+00000571  VL53L0X_SetGroupParamHold                          
+0000058b  VL53L0X_GetUpperLimitMilliMeter                    
+000005a3  VL53L0X_GetTotalSignalRate                         
+000005d9  VL53L0X_SetDeviceAddress                           
+00000605  VL53L0X_DataInit                                   
+0000085d  VL53L0X_SetTuningSettingBuffer                     
+000008a9  VL53L0X_GetTuningSettingBuffer                     
+000008dd  VL53L0X_StaticInit                                 
+00000b49  VL53L0X_WaitDeviceBooted                           
+00000b65  VL53L0X_ResetDevice                                
+00000bed  VL53L0X_SetDeviceParameters                        
+00000cd9  VL53L0X_GetDeviceParameters                        
+00000dd5  VL53L0X_SetDeviceMode                              
+00000e1d  VL53L0X_GetDeviceMode                              
+00000e3b  VL53L0X_SetRangeFractionEnable                     
+00000e6f  VL53L0X_GetFractionEnable                          
+00000ea1  VL53L0X_SetHistogramMode                           
+00000ebb  VL53L0X_GetHistogramMode                           
+00000ed3  VL53L0X_SetMeasurementTimingBudgetMicroSeconds     
+00000ef1  VL53L0X_GetMeasurementTimingBudgetMicroSeconds     
+00000f0f  VL53L0X_SetVcselPulsePeriod                        
+00000f39  VL53L0X_GetVcselPulsePeriod                        
+00000f5f  VL53L0X_SetSequenceStepEnable                      
+000010cd  sequence_step_enabled                              
+00001167  VL53L0X_GetSequenceStepEnable                      
+000011ad  VL53L0X_GetSequenceStepEnables                     
+00001255  VL53L0X_GetNumberOfSequenceSteps                   
+00001271  VL53L0X_GetSequenceStepsInfo                       
+00001293  VL53L0X_SetSequenceStepTimeout                     
+00001335  VL53L0X_GetSequenceStepTimeout                     
+00001387  VL53L0X_SetInterMeasurementPeriodMilliSeconds      
+000013e3  VL53L0X_GetInterMeasurementPeriodMilliSeconds      
+0000143f  VL53L0X_SetXTalkCompensationEnable                 
+000014a5  VL53L0X_GetXTalkCompensationEnable                 
+000014cb  VL53L0X_SetXTalkCompensationRateMegaCps            
+0000153b  VL53L0X_GetXTalkCompensationRateMegaCps            
+0000159b  VL53L0X_SetRefCalibration                          
+000015c5  VL53L0X_GetRefCalibration                          
+000015ed  VL53L0X_GetNumberOfLimitCheck                      
+00001607  VL53L0X_GetLimitCheckInfo                          
+0000162d  VL53L0X_GetLimitCheckStatus                        
+00001671  VL53L0X_SetLimitCheckEnable                        
+000017ab  VL53L0X_GetLimitCheckEnable                        
+000017f5  VL53L0X_SetLimitCheckValue                         
+000018af  VL53L0X_GetLimitCheckValue                         
+000019d3  VL53L0X_GetLimitCheckCurrent                       
+00001aa1  VL53L0X_SetWrapAroundCheckEnable                   
+00001b1b  VL53L0X_GetWrapAroundCheckEnable                   
+00001b73  VL53L0X_SetDmaxCalParameters                       
+00001bd3  VL53L0X_GetDmaxCalParameters                       
+00001bff  VL53L0X_PerformSingleMeasurement                   
+00001c57  VL53L0X_PerformSingleHistogramMeasurement          
+00001c6f  VL53L0X_PerformRefCalibration                      
+00001c99  VL53L0X_PerformXTalkMeasurement                    
+00001cb5  VL53L0X_PerformXTalkCalibration                    
+00001cdd  VL53L0X_PerformOffsetCalibration                   
+00001d05  VL53L0X_CheckAndLoadInterruptSettings              
+00001dcb  VL53L0X_StartMeasurement                           
+00001f3d  VL53L0X_StopMeasurement                            
+00001fc1  VL53L0X_GetMeasurementDataReady                    
+00002039  VL53L0X_WaitDeviceReadyForNewMeasurement           
+00002055  VL53L0X_GetRangingMeasurementData                  
+00002261  VL53L0X_GetMeasurementRefSignal                    
+000022a3  VL53L0X_GetHistogramMeasurementData                
+000022bb  VL53L0X_PerformSingleRangingMeasurement            
+0000230d  VL53L0X_SetNumberOfROIZones                        
+00002335  VL53L0X_GetNumberOfROIZones                        
+00002351  VL53L0X_GetMaxNumberOfROIZones                     
+0000236d  VL53L0X_SetGpioConfig                              
+000025b7  VL53L0X_GetGpioConfig                              
+000026a7  VL53L0X_SetInterruptThresholds                     
+000026ff  VL53L0X_GetInterruptThresholds                     
+0000275b  VL53L0X_GetStopCompletedStatus                     
+0000281f  VL53L0X_ClearInterruptMask                         
+000028a3  VL53L0X_GetInterruptMaskStatus                     
+000028e3  VL53L0X_EnableInterruptMask                        
+000028fb  VL53L0X_SetSpadAmbientDamperThreshold              
+00002947  VL53L0X_GetSpadAmbientDamperThreshold              
+0000298f  VL53L0X_SetSpadAmbientDamperFactor                 
+000029e7  VL53L0X_GetSpadAmbientDamperFactor                 
+00002a39  VL53L0X_SetReferenceSpads                          
+00002a5f  VL53L0X_GetReferenceSpads                          
+00002a87  VL53L0X_PerformRefSpadManagement                   
+00002ab1  VL53L0X_reverse_bytes                              
+00002b11  VL53L0X_measurement_poll_for_completion            
+00002b67  VL53L0X_decode_vcsel_period                        
+00002b89  VL53L0X_encode_vcsel_period                        
+00002bab  VL53L0X_isqrt                                      
+00002c11  VL53L0X_quadrature_sum                             
+00002c4f  VL53L0X_device_read_strobe                         
+00002ccd  VL53L0X_get_info_from_device                       
+0000349b  VL53L0X_calc_macro_period_ps                       
+000034c9  VL53L0X_encode_timeout                             
+0000351d  VL53L0X_decode_timeout                             
+00003547  VL53L0X_calc_timeout_mclks                         
+00003591  VL53L0X_calc_timeout_us                            
+000035df  get_sequence_step_timeout                          
+00003769  set_sequence_step_timeout                          
+00003927  VL53L0X_set_vcsel_pulse_period                     
+00003db7  VL53L0X_get_vcsel_pulse_period                     
+00003e1d  VL53L0X_set_measurement_timing_budget_micro_seconds
+00003fc9  VL53L0X_get_measurement_timing_budget_micro_seconds
+000040fd  VL53L0X_load_tuning_settings                       
+000042d5  VL53L0X_get_total_xtalk_rate                       
+00004329  VL53L0X_get_total_signal_rate                      
+00004369  VL53L0X_calc_dmax                                  
+00004569  VL53L0X_calc_sigma_estimate                        
+00004919  VL53L0X_get_pal_range_status                       
+00004c75  VL53L0X_perform_xtalk_calibration                  
+00004e1f  VL53L0X_perform_offset_calibration                 
+00004f71  VL53L0X_set_offset_calibration_data_micro_meter    
+00004fe5  VL53L0X_get_offset_calibration_data_micro_meter    
+0000505d  VL53L0X_apply_offset_adjustment                    
+000050bf  get_next_good_spad                                 
+0000517b  is_aperture                                        
+000051a5  enable_spad_bit                                    
+00005205  count_enabled_spads                                
+0000530b  set_ref_spad_map                                   
+00005327  get_ref_spad_map                                   
+00005343  enable_ref_spads                                   
+00005435  perform_ref_signal_measurement                     
+000054e5  VL53L0X_perform_ref_spad_management                
+000058a1  VL53L0X_set_reference_spads                        
+000059cb  VL53L0X_get_reference_spads                        
+00005a73  VL53L0X_perform_single_ref_calibration             
+00005ad7  VL53L0X_ref_calibration_io                         
+00005bef  VL53L0X_perform_vhv_calibration                    
+00005cbf  VL53L0X_perform_phase_calibration                  
+00005d89  VL53L0X_perform_ref_calibration                    
+00005e07  VL53L0X_set_ref_calibration                        
+00005e4b  VL53L0X_get_ref_calibration                        
+00005e95  VL53L0X_check_part_used                            
+00005efd  VL53L0X_get_device_info                            
+00005fb7  VL53L0X_get_device_error_string                    
+000060bb  VL53L0X_get_range_status_string                    
+00006325  VL53L0X_get_pal_error_string                       
+00006463  VL53L0X_get_pal_state_string                       
+000064f1  VL53L0X_get_sequence_steps_info                    
+000066e7  VL53L0X_get_limit_check_info                       
+00006885  VL53L0X_i2c_init                                   
+000068cd  VL53L0X_write_multi                                
+0000697b  VL53L0X_read_multi                                 
+00006a57  VL53L0X_write_byte                                 
+00006a79  VL53L0X_write_word                                 
+00006ab1  VL53L0X_write_dword                                
+00006af1  VL53L0X_read_byte                                  
+00006b0f  VL53L0X_read_word                                  
+00006b75  VL53L0X_read_dword                                 
+00006be5  VL53L0X_LockSequenceAccess                         
+00006bf9  VL53L0X_UnlockSequenceAccess                       
+00006c0d  VL53L0X_WriteMulti                                 
+00006c65  VL53L0X_ReadMulti                                  
+00006cb9  VL53L0X_WrByte                                     
+00006cf9  VL53L0X_WrWord                                     
+00006d3f  VL53L0X_WrDWord                                    
+00006d81  VL53L0X_UpdateByte                                 
+00006e03  VL53L0X_RdByte                                     
+00006e45  VL53L0X_RdWord                                     
+00006e87  VL53L0X_RdDWord                                    
+00006ec9  VL53L0X_PollingDelay                               
+00006ef3  rangingTest                                        
+00006fe3  main                                               
+00007035  GPIOPadConfigSet                                   
+00007169  SysCtlClockGet                                     
+00007279  __aeabi_memcpy                                     
+00007279  __aeabi_memcpy4                                    
+00007279  __aeabi_memcpy8                                    
+00007279  memcpy                                             
+00007315  __TI_decompress_lzss                               
+0000737d  SysCtlPeripheralReset                              
+000073cd  I2CMasterInitExpClk                                
+00007419  GPIOPinConfigure                                   
+00007461  __TI_auto_init_nobinit_nopinit                     
+000074a5  _c_int00_noargs                                    
+000074dd  SysCtlPeripheralEnable                             
+00007511  GPIODirModeSet                                     
+0000753b  strcpy                                             
+0000754f  GPIOPinTypeI2C                                     
+00007561  GPIOPinTypeI2CSCL                                  
+00007573  __TI_decompress_none                               
+00007581  ResetISR                                           
+0000758d  I2CMasterEnable                                    
+00007597  I2CMasterBusy                                      
+0000759f  I2CMasterSlaveAddrSet                              
+000075a7  I2CMasterControl                                   
+000075ab  I2CMasterDataGet                                   
+000075af  I2CMasterDataPut                                   
+000075b3  _system_pre_init                                   
+000075b7  C$$EXIT                                            
+000075b7  abort                                              
+000079bc  __TI_Handler_Table_Base                            
+000079c4  __TI_CINIT_Base                                    
+000079c4  __TI_Handler_Table_Limit                           
+000079cc  __TI_CINIT_Limit                                   
+20000000  InterruptThresholdSettings                         
+200001b6  DefaultTuningSettings                              
+200002ac  refArrayQuadrants                                  
+200002c0  __stack                                            
+200004c0  __STACK_END                                        
+200004c0  __STACK_TOP                                        
+ffffffff  __TI_pprof_out_hndl                                
+ffffffff  __TI_prof_data_size                                
+ffffffff  __TI_prof_data_start                               
+ffffffff  __binit__                                          
+ffffffff  __c_args__                                         
+ffffffff  binit                                              
+UNDEFED   __mpu_init                                         
+UNDEFED   _system_post_cinit                                 
+
+[227 symbols]

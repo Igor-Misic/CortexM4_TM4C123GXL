@@ -1,0 +1,1120 @@
+******************************************************************************
+                  TI ARM Linker Unix v18.1.1                   
+******************************************************************************
+>> Linked Sun Jun 10 13:44:08 2018
+
+OUTPUT FILE NAME:   <VL53L1.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000ba6d
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  0000c106  00033efa  R  X
+  SRAM                  20000000   00008000  00000bf4  0000740c  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    0000c108   0000c108    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    0000bbe2   0000bbe2    r-x .text
+  0000be50    0000be50    00000208   00000208    r-- .const
+  0000c058    0000c058    000000b0   000000b0    r-- .cinit
+20000000    20000000    00000bf8   00000000    rw-
+  20000000    20000000    00000800   00000000    rw- .stack
+  20000800    20000800    00000208   00000000    rw- .data
+  20000a08    20000a08    000001e4   00000000    rw- .bss
+  20000bf0    20000bf0    00000008   00000000    rw- .sysmem
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    0000bbe2     
+                  0000026c    000021ba     vl53l1_api.obj (.text)
+                  00002426    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.c.obj (.text:_nop)
+                  00002428    00002134     vl53l1_api_core.obj (.text)
+                  0000455c    00001750     vl53l1_core.obj (.text)
+                  00005cac    00001280     vl53l1_register_funcs.obj (.text)
+                  00006f2c    00000a5e     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:__TI_printfi)
+                  0000798a    00000904     vl53l1_api_preset_modes.obj (.text)
+                  0000828e    000007d2     vl53l1_api_calibration.obj (.text)
+                  00008a60    00000414     vl53l1_wait.obj (.text)
+                  00008e74    000003c4     vl53l1_i2c_comms.obj (.text)
+                  00009238    000003ac     vl53l1_api_strings.obj (.text)
+                  000095e4    00000372     vl53l1_platform.obj (.text)
+                  00009956    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : div0.asm.obj (.text)
+                  00009958    00000270                                   : _printfi.c.obj (.text:_pconv_a)
+                  00009bc8    000001d0                                   : _printfi.c.obj (.text:_pconv_g)
+                  00009d98    000001b6                                   : fd_add_t2.asm.obj (.text)
+                  00009f4e    00000002     --HOLE-- [fill = 0]
+                  00009f50    0000013c                                   : _printfi.c.obj (.text:_pconv_e)
+                  0000a08c    00000136                                   : fd_div_t2.asm.obj (.text)
+                  0000a1c2    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  0000a2f4    00000120     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:fcvt)
+                  0000a414    00000114                                   : fputs.c.obj (.text:fputs)
+                  0000a528    00000110     driverlib.lib : sysctl.obj (.text:SysCtlClockGet)
+                  0000a638    00000110     rtsv7M4_T_le_v4SPD16_eabi.lib : s_scalbn.c.obj (.text:scalbn)
+                  0000a748    000000fc                                   : fd_mul_t2.asm.obj (.text)
+                  0000a844    000000dc                                   : setvbuf.c.obj (.text:setvbuf)
+                  0000a920    000000d8                                   : memory.c.obj (.text:free)
+                  0000a9f8    000000d4     main.obj (.text)
+                  0000aacc    000000b4     vl53l1_silicon_core.obj (.text)
+                  0000ab80    000000b1     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_ltostr)
+                  0000ac31    00000001     --HOLE-- [fill = 0]
+                  0000ac32    0000009c                                   : memcpy_t2.asm.obj (.text)
+                  0000acce    00000096                                   : ull_div_t2.asm.obj (.text)
+                  0000ad64    00000094     vl53l1_core_support.obj (.text)
+                  0000adf8    0000008c     rtsv7M4_T_le_v4SPD16_eabi.lib : fputc.c.obj (.text:fputc)
+                  0000ae84    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdcmple)
+                  0000af0a    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdrcmple)
+                  0000af90    0000007a                                   : memset_t2.asm.obj (.text)
+                  0000b00a    00000002     --HOLE-- [fill = 0]
+                  0000b00c    00000078                                   : memory.c.obj (.text:malloc)
+                  0000b084    00000074                                   : fclose.c.obj (.text:__TI_closefile)
+                  0000b0f8    0000006e                                   : _printfi.c.obj (.text:_mcpy)
+                  0000b166    00000002     --HOLE-- [fill = 0]
+                  0000b168    00000068                                   : hostlseek.c.obj (.text:HOSTlseek)
+                  0000b1d0    00000068                                   : hostrename.c.obj (.text:HOSTrename)
+                  0000b238    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  0000b2a0    00000068                                   : printf.c.obj (.text:printf)
+                  0000b308    00000064                                   : s_frexp.c.obj (.text:frexp)
+                  0000b36c    00000064                                   : fseek.c.obj (.text:fseek)
+                  0000b3d0    00000062                                   : _io_perm.c.obj (.text:__TI_wrt_ok)
+                  0000b432    00000002     --HOLE-- [fill = 0]
+                  0000b434    00000060                                   : hostopen.c.obj (.text:HOSTopen)
+                  0000b494    0000005c                                   : close.c.obj (.text:close)
+                  0000b4f0    00000058                                   : hostread.c.obj (.text:HOSTread)
+                  0000b548    00000058                                   : hostwrite.c.obj (.text:HOSTwrite)
+                  0000b5a0    00000056                                   : _printfi.c.obj (.text:_pconv_f)
+                  0000b5f6    00000054                                   : ltoa.c.obj (.text:ltoa)
+                  0000b64a    00000052                                   : _printfi.c.obj (.text:_ecpy)
+                  0000b69c    00000050     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralReset)
+                  0000b6ec    0000004c                   : i2c.obj (.text:I2CMasterInitExpClk)
+                  0000b738    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : fflush.c.obj (.text:__TI_doflush)
+                  0000b784    0000004c                                   : atoi.c.obj (.text:atoi)
+                  0000b7d0    00000048     driverlib.lib : gpio.obj (.text:GPIOPinConfigure)
+                  0000b818    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.c.obj (.text:exit)
+                  0000b860    00000048                                   : fd_toi_t2.asm.obj (.text)
+                  0000b8a8    00000044                                   : hostclose.c.obj (.text:HOSTclose)
+                  0000b8ec    00000044                                   : hostunlink.c.obj (.text:HOSTunlink)
+                  0000b930    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  0000b974    00000044                                   : getdevice.c.obj (.text:getdevice)
+                  0000b9b8    0000003e                                   : _printfi.c.obj (.text:_fcpy)
+                  0000b9f6    00000002     --HOLE-- [fill = 0]
+                  0000b9f8    0000003c                                   : memory.c.obj (.text:minsert)
+                  0000ba34    00000038                                   : trgmsg.c.obj (.text:__TI_writemsg)
+                  0000ba6c    00000038                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  0000baa4    00000038                                   : memory.c.obj (.text:minit)
+                  0000badc    00000036                                   : strncpy.c.obj (.text:strncpy)
+                  0000bb12    00000002     --HOLE-- [fill = 0]
+                  0000bb14    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  0000bb48    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : fopen.c.obj (.text:__TI_cleanup)
+                  0000bb7c    00000034                                   : trgmsg.c.obj (.text:__TI_readmsg)
+                  0000bbb0    00000030                                   : getdevice.c.obj (.text:finddevice)
+                  0000bbe0    0000002e                                   : i_tofd_t2.asm.obj (.text)
+                  0000bc0e    00000002     --HOLE-- [fill = 0]
+                  0000bc10    0000002c                                   : unlink.c.obj (.text:unlink)
+                  0000bc3c    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  0000bc66    00000002     --HOLE-- [fill = 0]
+                  0000bc68    00000028     rtsv7M4_T_le_v4SPD16_eabi.lib : lseek.c.obj (.text:lseek)
+                  0000bc90    00000028                                   : memory.c.obj (.text:mremove)
+                  0000bcb8    00000028                                   : write.c.obj (.text:write)
+                  0000bce0    00000022     vl53l1_error_strings.obj (.text)
+                  0000bd02    00000020     rtsv7M4_T_le_v4SPD16_eabi.lib : memchr.c.obj (.text:memchr)
+                  0000bd22    0000001c                                   : memccpy.c.obj (.text:memccpy)
+                  0000bd3e    00000018                                   : strcmp.c.obj (.text:strcmp)
+                  0000bd56    00000016                                   : strchr.c.obj (.text:strchr)
+                  0000bd6c    00000014                                   : s_copysign.c.obj (.text:copysign)
+                  0000bd80    00000014                                   : strcpy.c.obj (.text:strcpy)
+                  0000bd94    00000014                                   : strlen.c.obj (.text:strlen)
+                  0000bda8    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeI2C)
+                  0000bdba    00000012                   : gpio.obj (.text:GPIOPinTypeI2CSCL)
+                  0000bdcc    00000012     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  0000bdde    00000012                                   : wcslen.c.obj (.text:wcslen)
+                  0000bdf0    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  0000bdfe    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  0000be0a    0000000a     driverlib.lib : i2c.obj (.text:I2CMasterEnable)
+                  0000be14    00000008                   : i2c.obj (.text:I2CMasterBusy)
+                  0000be1c    00000008                   : i2c.obj (.text:I2CMasterSlaveAddrSet)
+                  0000be24    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.c.obj (.text:__aeabi_errno_addr)
+                  0000be2c    00000006     driverlib.lib : sysctl.obj (.text:SysCtlDelay)
+                  0000be32    00000004                   : i2c.obj (.text:I2CMasterControl)
+                  0000be36    00000004                   : i2c.obj (.text:I2CMasterDataGet)
+                  0000be3a    00000004                   : i2c.obj (.text:I2CMasterDataPut)
+                  0000be3e    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : printf.c.obj (.text:_outc)
+                  0000be42    00000004                                   : printf.c.obj (.text:_outs)
+                  0000be46    00000004                                   : pre_init.c.obj (.text:_system_pre_init)
+                  0000be4a    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    0000be50    00000208     
+                  0000be50    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.c.obj (.const:.string:_ctypes_)
+                  0000bf51    00000003     vl53l1_api.obj (.const:.string:$P$T0$1)
+                  0000bf54    00000090     driverlib.lib : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  0000bfe4    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  0000c050    00000003     vl53l1_api.obj (.const:.string:$P$T1$2)
+                  0000c053    00000003     vl53l1_api.obj (.const:.string:$P$T2$3)
+                  0000c056    00000002     vl53l1_api.obj (.const:.string:$P$T3$4)
+
+.cinit     0    0000c058    000000b0     
+                  0000c058    00000085     (.cinit..data.load) [load image, compression = lzss]
+                  0000c0dd    00000003     --HOLE-- [fill = 0]
+                  0000c0e0    0000000c     (__TI_handler_table)
+                  0000c0ec    00000004     --HOLE-- [fill = 0]
+                  0000c0f0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000c0f8    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.stack     0    20000000    00000800     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000007fc     --HOLE--
+
+.data      0    20000800    00000208     UNINITIALIZED
+                  20000800    000000f0     rtsv7M4_T_le_v4SPD16_eabi.lib : defs.c.obj (.data:_ftable)
+                  200008f0    00000078                                   : write.c.obj (.data:_device)
+                  20000968    00000050                                   : write.c.obj (.data:_stream)
+                  200009b8    0000001c     vl53l1_api.obj (.data:BDTable)
+                  200009d4    00000010     rtsv7M4_T_le_v4SPD16_eabi.lib : defs.c.obj (.data)
+                  200009e4    0000000c                                   : exit.c.obj (.data:$O1$$)
+                  200009f0    0000000c                                   : memory.c.obj (.data:$O1$$)
+                  200009fc    00000008                                   : _lock.c.obj (.data:$O1$$)
+                  20000a04    00000004                                   : errno.c.obj (.data)
+
+.bss       0    20000a08    000001e4     UNINITIALIZED
+                  20000a08    00000120     rtsv7M4_T_le_v4SPD16_eabi.lib : trgmsg.c.obj (.bss:_CIOBUF_)
+                  20000b28    000000a0     (.common:__TI_tmpnams)
+                  20000bc8    0000001c     main.obj (.bss:RangingData$1)
+                  20000be4    00000008     (.common:parmbuf)
+
+.sysmem    0    20000bf0    00000008     UNINITIALIZED
+                  20000bf0    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.c.obj (.sysmem)
+
+MODULE SUMMARY
+
+       Module                         code    ro data   rw data
+       ------                         ----    -------   -------
+    ./
+       tm4c123gh6pm_startup_ccs.obj   12      620       0      
+       main.obj                       212     0         28     
+    +--+------------------------------+-------+---------+---------+
+       Total:                         224     620       28     
+                                                               
+    ./core/src/
+       vl53l1_api.obj                 8634    11        28     
+       vl53l1_api_core.obj            8500    0         0      
+       vl53l1_core.obj                5968    0         0      
+       vl53l1_register_funcs.obj      4736    0         0      
+       vl53l1_api_preset_modes.obj    2308    0         0      
+       vl53l1_api_calibration.obj     2002    0         0      
+       vl53l1_wait.obj                1044    0         0      
+       vl53l1_api_strings.obj         940     0         0      
+       vl53l1_silicon_core.obj        180     0         0      
+       vl53l1_core_support.obj        148     0         0      
+       vl53l1_error_strings.obj       34      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         34494   11        28     
+                                                               
+    ./platform/src/
+       vl53l1_i2c_comms.obj           964     0         0      
+       vl53l1_platform.obj            882     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         1846    0         0      
+                                                               
+    /home/igor/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.1.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
+       _printfi.c.obj                 4863    0         0      
+       memory.c.obj                   492     0         12     
+       fd_add_t2.asm.obj              438     0         0      
+       defs.c.obj                     0       0         416    
+       trgmsg.c.obj                   108     0         288    
+       fd_div_t2.asm.obj              310     0         0      
+       fputs.c.obj                    276     0         0      
+       s_scalbn.c.obj                 272     0         0      
+       fd_cmp_t2.asm.obj              268     0         0      
+       ctype.c.obj                    0       257       0      
+       fd_mul_t2.asm.obj              252     0         0      
+       write.c.obj                    40      0         200    
+       setvbuf.c.obj                  220     0         0      
+       memcpy_t2.asm.obj              156     0         0      
+       ull_div_t2.asm.obj             150     0         0      
+       fputc.c.obj                    140     0         0      
+       memset_t2.asm.obj              122     0         0      
+       fclose.c.obj                   116     0         0      
+       getdevice.c.obj                116     0         0      
+       printf.c.obj                   112     0         0      
+       copy_decompress_lzss.c.obj     104     0         0      
+       hostlseek.c.obj                104     0         0      
+       hostopen.c.obj                 96      0         8      
+       hostrename.c.obj               104     0         0      
+       fseek.c.obj                    100     0         0      
+       s_frexp.c.obj                  100     0         0      
+       _io_perm.c.obj                 98      0         0      
+       close.c.obj                    92      0         0      
+       exit.c.obj                     76      0         12     
+       hostread.c.obj                 88      0         0      
+       hostwrite.c.obj                88      0         0      
+       ltoa.c.obj                     84      0         0      
+       atoi.c.obj                     76      0         0      
+       fflush.c.obj                   76      0         0      
+       fd_toi_t2.asm.obj              72      0         0      
+       autoinit.c.obj                 68      0         0      
+       hostclose.c.obj                68      0         0      
+       hostunlink.c.obj               68      0         0      
+       boot_cortex_m.c.obj            56      0         0      
+       strncpy.c.obj                  54      0         0      
+       fopen.c.obj                    52      0         0      
+       i_tofd_t2.asm.obj              46      0         0      
+       unlink.c.obj                   44      0         0      
+       lseek.c.obj                    40      0         0      
+       memchr.c.obj                   32      0         0      
+       memccpy.c.obj                  28      0         0      
+       strcmp.c.obj                   24      0         0      
+       strchr.c.obj                   22      0         0      
+       s_copysign.c.obj               20      0         0      
+       strcpy.c.obj                   20      0         0      
+       strlen.c.obj                   20      0         0      
+       copy_zero_init.c.obj           18      0         0      
+       wcslen.c.obj                   18      0         0      
+       copy_decompress_none.c.obj     14      0         0      
+       errno.c.obj                    8       0         4      
+       _lock.c.obj                    2       0         8      
+       pre_init.c.obj                 4       0         0      
+       div0.asm.obj                   2       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         10537   257       948    
+                                                               
+    /home/igor/ti/tirex-content/TivaWare_C_Series-2.1.3.156/driverlib/ccs/Debug/driverlib.lib
+       gpio.obj                       456     144       0      
+       sysctl.obj                     410     108       0      
+       i2c.obj                        114     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         980     252       0      
+                                                               
+       Heap:                          0       0         8      
+       Stack:                         0       0         2048   
+       Linker Generated:              0       169       0      
+    +--+------------------------------+-------+---------+---------+
+       Grand Total:                   48081   1309      3060   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0000c0f8 records: 2, size/record: 8, table size: 16
+	.data: load addr=0000c058, load size=00000085 bytes, run addr=20000800, run size=00000208 bytes, compression=lzss
+	.bss: load addr=0000c0f0, load size=00000008 bytes, run addr=20000a08, run size=000001e4 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000c0e0 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                             
+-------   ----                                             
+0000be4b  C$$EXIT                                          
+0000ba63  C$$IO$$                                          
+0000bc3d  GPIODirModeSet                                   
+0000a1c3  GPIOPadConfigSet                                 
+0000b7d1  GPIOPinConfigure                                 
+0000bda9  GPIOPinTypeI2C                                   
+0000bdbb  GPIOPinTypeI2CSCL                                
+0000b8a9  HOSTclose                                        
+0000b169  HOSTlseek                                        
+0000b435  HOSTopen                                         
+0000b4f1  HOSTread                                         
+0000b1d1  HOSTrename                                       
+0000b8ed  HOSTunlink                                       
+0000b549  HOSTwrite                                        
+0000be15  I2CMasterBusy                                    
+0000be33  I2CMasterControl                                 
+0000be37  I2CMasterDataGet                                 
+0000be3b  I2CMasterDataPut                                 
+0000be0b  I2CMasterEnable                                  
+0000b6ed  I2CMasterInitExpClk                              
+0000be1d  I2CMasterSlaveAddrSet                            
+0000bdff  ResetISR                                         
+0000a529  SysCtlClockGet                                   
+0000be2d  SysCtlDelay                                      
+0000bb15  SysCtlPeripheralEnable                           
+0000b69d  SysCtlPeripheralReset                            
+00001727  VL53L1_ClearInterruptAndStartMeasurement         
+0000091d  VL53L1_DataInit                                  
+00002051  VL53L1_GetCalibrationData                        
+000007e7  VL53L1_GetDeviceInfo                             
+00000d89  VL53L1_GetDistanceMode                           
+0000109f  VL53L1_GetInterMeasurementPeriodMilliSeconds     
+0000138f  VL53L1_GetLimitCheckCurrent                      
+00001217  VL53L1_GetLimitCheckEnable                       
+000010d7  VL53L1_GetLimitCheckInfo                         
+000010f9  VL53L1_GetLimitCheckStatus                       
+000012d7  VL53L1_GetLimitCheckValue                        
+00001779  VL53L1_GetMeasurementDataReady                   
+00000f41  VL53L1_GetMeasurementTimingBudgetMicroSeconds    
+000010bd  VL53L1_GetNumberOfLimitCheck                     
+000014df  VL53L1_GetNumberOfSequenceSteps                  
+0000213d  VL53L1_GetOpticalCenter                          
+0000088d  VL53L1_GetPalErrorString                         
+000008d1  VL53L1_GetPalState                               
+000008af  VL53L1_GetPalStateString                         
+00000c53  VL53L1_GetPresetMode                             
+000007ad  VL53L1_GetProductRevision                        
+00000867  VL53L1_GetRangeStatusString                      
+00001af3  VL53L1_GetRangingMeasurementData                 
+0000155d  VL53L1_GetSequenceStepEnable                     
+000014fb  VL53L1_GetSequenceStepsInfo                      
+00002353  VL53L1_GetThresholdConfig                        
+0000988b  VL53L1_GetTickCount                              
+000098a1  VL53L1_GetTimerFrequency                         
+00001ba1  VL53L1_GetTuningParameter                        
+00001473  VL53L1_GetUserROI                                
+00000779  VL53L1_GetVersion                                
+00001d19  VL53L1_GetXTalkCompensationEnable                
+00001db9  VL53L1_PerformOffsetCalibration                  
+00001e25  VL53L1_PerformOffsetSimpleCalibration            
+00001bf3  VL53L1_PerformRefSpadManagement                  
+00001d33  VL53L1_PerformSingleTargetXTalkCalibration       
+000097c5  VL53L1_RdByte                                    
+00009849  VL53L1_RdDWord                                   
+00009807  VL53L1_RdWord                                    
+0000962f  VL53L1_ReadMulti                                 
+00001f61  VL53L1_SetCalibrationData                        
+000008f1  VL53L1_SetDeviceAddress                          
+00000c81  VL53L1_SetDistanceMode                           
+00001081  VL53L1_SetInterMeasurementPeriodMilliSeconds     
+0000119f  VL53L1_SetLimitCheckEnable                       
+00001261  VL53L1_SetLimitCheckValue                        
+00000da9  VL53L1_SetMeasurementTimingBudgetMicroSeconds    
+00001d69  VL53L1_SetOffsetCalibrationMode                  
+00000bbf  VL53L1_SetPresetMode                             
+0000151d  VL53L1_SetSequenceStepEnable                     
+00002189  VL53L1_SetThresholdConfig                        
+00001b51  VL53L1_SetTuningParameter                        
+000013d5  VL53L1_SetUserROI                                
+00001ce9  VL53L1_SetXTalkCompensationEnable                
+00001583  VL53L1_StartMeasurement                          
+000009bf  VL53L1_StaticInit                                
+0000160d  VL53L1_StopMeasurement                           
+00009743  VL53L1_UpdateByte                                
+00000a09  VL53L1_WaitDeviceBooted                          
+00001797  VL53L1_WaitMeasurementDataReady                  
+000098b5  VL53L1_WaitMs                                    
+000098cb  VL53L1_WaitUs                                    
+000098e1  VL53L1_WaitValueMaskEx                           
+00009675  VL53L1_WrByte                                    
+00009701  VL53L1_WrDWord                                   
+000096bb  VL53L1_WrWord                                    
+000095e5  VL53L1_WriteMulti                                
+00004fb9  VL53L1_calc_crosstalk_plane_offset_with_margin   
+00004ff7  VL53L1_calc_decoded_timeout_us                   
+00004f3b  VL53L1_calc_encoded_timeout                      
+00004e07  VL53L1_calc_macro_period_us                      
+00005477  VL53L1_calc_mm_effective_spads                   
+0000ad65  VL53L1_calc_pll_period_us                        
+00004e59  VL53L1_calc_range_ignore_threshold               
+00004f17  VL53L1_calc_timeout_mclks                        
+000050a3  VL53L1_calc_timeout_register_values              
+00004f6b  VL53L1_calc_timeout_us                           
+000046c1  VL53L1_check_ll_driver_rd_state                  
+00004dd9  VL53L1_clear_interrupt                           
+000039a9  VL53L1_clear_interrupt_and_enable_next_range     
+00005b11  VL53L1_config_low_power_auto_mode                
+0000481b  VL53L1_copy_rtn_good_spads_to_buffer             
+000039d3  VL53L1_copy_sys_and_core_results_to_range_results
+00002429  VL53L1_data_init                                 
+00005673  VL53L1_decode_GPIO_interrupt_config              
+0000ada7  VL53L1_decode_row_col                            
+00005079  VL53L1_decode_timeout                            
+000051d1  VL53L1_decode_unsigned_integer                   
+0000ad85  VL53L1_decode_vcsel_period                       
+00005335  VL53L1_decode_zone_limits                        
+000052ed  VL53L1_decode_zone_size                          
+0000922d  VL53L1_delay                                     
+00004d51  VL53L1_disable_firmware                          
+00004dbd  VL53L1_disable_powerforce                        
+0000321d  VL53L1_disable_xtalk_compensation                
+00004d35  VL53L1_enable_firmware                           
+00004da1  VL53L1_enable_powerforce                         
+000030db  VL53L1_enable_xtalk_compensation                 
+0000561d  VL53L1_encode_GPIO_interrupt_config              
+000052a5  VL53L1_encode_row_col                            
+00005025  VL53L1_encode_timeout                            
+00005219  VL53L1_encode_unsigned_integer                   
+000051af  VL53L1_encode_vcsel_period                       
+00005313  VL53L1_encode_zone_size                          
+00003cc3  VL53L1_get_GPIO_interrupt_config                 
+000029e7  VL53L1_get_calibration_repeat_period             
+0000605f  VL53L1_get_customer_nvm_managed                  
+000038bf  VL53L1_get_device_results                        
+0000283d  VL53L1_get_inter_measurement_period_ms           
+00002c65  VL53L1_get_interrupt_polarity                    
+0000944b  VL53L1_get_limit_check_info                      
+000032bd  VL53L1_get_lite_min_count_rate                   
+00003273  VL53L1_get_lite_sigma_threshold                  
+00003197  VL53L1_get_lite_xtalk_margin_kcps                
+000037a5  VL53L1_get_measurement_results                   
+00002d0b  VL53L1_get_mode_mitigation_roi                   
+00006ee9  VL53L1_get_nvm_copy_data                         
+00003d51  VL53L1_get_offset_calibration_mode               
+00003d97  VL53L1_get_offset_correction_mode                
+0000bce1  VL53L1_get_pal_error_string                      
+000092cf  VL53L1_get_pal_state_string                      
+0000275b  VL53L1_get_part_to_part_data                     
+00002d7b  VL53L1_get_preset_mode_timing_cfg                
+00002c29  VL53L1_get_range_ignore_threshold                
+00009239  VL53L1_get_range_status_string                   
+00002b9f  VL53L1_get_refspadchar_config_struct             
+00002aa3  VL53L1_get_sequence_config_bit                   
+00009389  VL53L1_get_sequence_steps_info                   
+00005999  VL53L1_get_spad_rate_data                        
+00005e13  VL53L1_get_static_nvm_managed                    
+00006991  VL53L1_get_system_results                        
+0000921f  VL53L1_get_tick_count                            
+000028f1  VL53L1_get_timeouts_us                           
+00003db9  VL53L1_get_tuning_parm                           
+00002ccd  VL53L1_get_user_zone                             
+00003367  VL53L1_get_vhv_config                            
+00003307  VL53L1_get_vhv_loopbound                         
+0000317d  VL53L1_get_xtalk_compensation_enable             
+000069d3  VL53L1_i2c_decode_core_results                   
+00005f3f  VL53L1_i2c_decode_customer_nvm_managed           
+00006a71  VL53L1_i2c_decode_debug_results                  
+0000647f  VL53L1_i2c_decode_general_config                 
+00004b11  VL53L1_i2c_decode_int16_t                        
+00004c95  VL53L1_i2c_decode_int32_t                        
+00006cd1  VL53L1_i2c_decode_nvm_copy_data                  
+00006203  VL53L1_i2c_decode_static_config                  
+00005d3f  VL53L1_i2c_decode_static_nvm_managed             
+00006823  VL53L1_i2c_decode_system_results                 
+00004a6f  VL53L1_i2c_decode_uint16_t                       
+00004bb5  VL53L1_i2c_decode_uint32_t                       
+00004be9  VL53L1_i2c_decode_with_mask                      
+00005e55  VL53L1_i2c_encode_customer_nvm_managed           
+0000666b  VL53L1_i2c_encode_dynamic_config                 
+000063a7  VL53L1_i2c_encode_general_config                 
+00004aab  VL53L1_i2c_encode_int16_t                        
+00004c3d  VL53L1_i2c_encode_int32_t                        
+000060a1  VL53L1_i2c_encode_static_config                  
+00005cad  VL53L1_i2c_encode_static_nvm_managed             
+00006781  VL53L1_i2c_encode_system_control                 
+00006599  VL53L1_i2c_encode_timing_config                  
+00004a09  VL53L1_i2c_encode_uint16_t                       
+00004b5d  VL53L1_i2c_encode_uint32_t                       
+00008e75  VL53L1_i2c_init                                  
+000033db  VL53L1_init_and_start_range                      
+0000458b  VL53L1_init_ll_driver_state                      
+00007aa9  VL53L1_init_offset_cal_config_struct             
+0000798b  VL53L1_init_refspadchar_config_struct            
+000079cb  VL53L1_init_ssc_config_struct                    
+00004947  VL53L1_init_system_results                       
+00007aef  VL53L1_init_tuning_parm_storage_struct           
+0000455d  VL53L1_init_version                              
+00007a05  VL53L1_init_xtalk_config_struct                  
+0000540d  VL53L1_is_aperture_location                      
+00008c1d  VL53L1_is_boot_complete                          
+00008c6b  VL53L1_is_firmware_ready                         
+0000aacd  VL53L1_is_firmware_ready_silicon                 
+00008c9d  VL53L1_is_new_data_ready                         
+00005a49  VL53L1_low_power_auto_data_init                  
+00005aa9  VL53L1_low_power_auto_data_stop_range            
+00005b49  VL53L1_low_power_auto_setup_manual_calibration   
+00005bc1  VL53L1_low_power_auto_update_DSS                 
+00008d1b  VL53L1_poll_for_boot_completion                  
+00008d6d  VL53L1_poll_for_firmware_ready                   
+00008e11  VL53L1_poll_for_range_completion                 
+0000819f  VL53L1_preset_mode_low_power_auto_long_ranging   
+0000810f  VL53L1_preset_mode_low_power_auto_ranging        
+00008157  VL53L1_preset_mode_low_power_auto_short_ranging  
+0000824f  VL53L1_preset_mode_olt                           
+000081e7  VL53L1_preset_mode_singleshot_ranging            
+00007c03  VL53L1_preset_mode_standard_ranging              
+00007eb5  VL53L1_preset_mode_standard_ranging_long_range   
+00007f33  VL53L1_preset_mode_standard_ranging_mm1_cal      
+00007f79  VL53L1_preset_mode_standard_ranging_mm2_cal      
+00007e37  VL53L1_preset_mode_standard_ranging_short_range  
+00007fbf  VL53L1_preset_mode_timed_ranging                 
+0000809f  VL53L1_preset_mode_timed_ranging_long_range      
+0000802f  VL53L1_preset_mode_timed_ranging_short_range     
+00009129  VL53L1_read_byte                                 
+000091b9  VL53L1_read_dword                                
+00008f8f  VL53L1_read_multi                                
+0000254b  VL53L1_read_p2p_data                             
+00009147  VL53L1_read_word                                 
+000031e1  VL53L1_restore_xtalk_nvm_default                 
+0000898d  VL53L1_run_device_test                           
+00008417  VL53L1_run_offset_calibration                    
+0000828f  VL53L1_run_ref_spad_char                         
+000088db  VL53L1_run_spad_rate_map                         
+000056dd  VL53L1_set_GPIO_distance_threshold               
+00003bf9  VL53L1_set_GPIO_interrupt_config                 
+00003c77  VL53L1_set_GPIO_interrupt_config_struct          
+00005711  VL53L1_set_GPIO_rate_threshold                   
+00005745  VL53L1_set_GPIO_thresholds_from_struct           
+000029c1  VL53L1_set_calibration_repeat_period             
+0000601d  VL53L1_set_customer_nvm_managed                  
+0000673f  VL53L1_set_dynamic_config                        
+00004d01  VL53L1_set_firmware_enable_register              
+00006557  VL53L1_set_general_config                        
+000027f7  VL53L1_set_inter_measurement_period_ms           
+00002b13  VL53L1_set_interrupt_polarity                    
+000032e1  VL53L1_set_lite_min_count_rate                   
+00003297  VL53L1_set_lite_sigma_threshold                  
+000031bb  VL53L1_set_lite_xtalk_margin_kcps                
+00003d2d  VL53L1_set_offset_calibration_mode               
+00003d73  VL53L1_set_offset_correction_mode                
+0000267b  VL53L1_set_part_to_part_data                     
+00004d6d  VL53L1_set_powerforce_register                   
+00002e6d  VL53L1_set_preset_mode                           
+00002bf5  VL53L1_set_range_ignore_threshold                
+00005781  VL53L1_set_ref_spad_char_config                  
+00002b49  VL53L1_set_refspadchar_config_struct             
+00002a0b  VL53L1_set_sequence_config_bit                   
+0000589d  VL53L1_set_ssc_config                            
+00006365  VL53L1_set_static_config                         
+00005dd1  VL53L1_set_static_nvm_managed                    
+000067e1  VL53L1_set_system_control                        
+00002881  VL53L1_set_timeouts_us                           
+00004191  VL53L1_set_tuning_parm                           
+00002c8d  VL53L1_set_user_zone                             
+000033a1  VL53L1_set_vhv_config                            
+00003333  VL53L1_set_vhv_loopbound                         
+00002621  VL53L1_software_reset                            
+00005271  VL53L1_spad_number_to_byte_bit_index             
+00004cd7  VL53L1_start_test                                
+00003745  VL53L1_stop_range                                
+00004767  VL53L1_update_ll_driver_cfg_state                
+000045d7  VL53L1_update_ll_driver_rd_state                 
+00008a61  VL53L1_wait_for_boot_completion                  
+00008ac7  VL53L1_wait_for_firmware_ready                   
+00008b51  VL53L1_wait_for_range_completion                 
+00008bb7  VL53L1_wait_for_test_completion                  
+0000908f  VL53L1_write_byte                                
+000090e7  VL53L1_write_dword                               
+00008ebd  VL53L1_write_multi                               
+000090b1  VL53L1_write_word                                
+20000a08  __CIOBUF_                                        
+20000800  __STACK_END                                      
+00000800  __STACK_SIZE                                     
+20000200  __STACK_TOP                                      
+00000008  __SYSMEM_SIZE                                    
+0000c0f8  __TI_CINIT_Base                                  
+0000c108  __TI_CINIT_Limit                                 
+0000c0e0  __TI_Handler_Table_Base                          
+0000c0ec  __TI_Handler_Table_Limit                         
+0000b931  __TI_auto_init_nobinit_nopinit                   
+0000bb49  __TI_cleanup                                     
+200009e4  __TI_cleanup_ptr                                 
+0000b085  __TI_closefile                                   
+0000b239  __TI_decompress_lzss                             
+0000bdf1  __TI_decompress_none                             
+0000b739  __TI_doflush                                     
+200009e8  __TI_dtors_ptr                                   
+200009ec  __TI_enable_exit_profile_output                  
+200009d4  __TI_ft_end                                      
+ffffffff  __TI_pprof_out_hndl                              
+00006f2d  __TI_printfi                                     
+ffffffff  __TI_prof_data_size                              
+ffffffff  __TI_prof_data_start                             
+0000bb7d  __TI_readmsg                                     
+00000000  __TI_static_base__                               
+20000b28  __TI_tmpnams                                     
+0000ba35  __TI_writemsg                                    
+0000b3d1  __TI_wrt_ok                                      
+0000bdcd  __TI_zero_init_nomemset                          
+0000ae85  __aeabi_cdcmpeq                                  
+0000ae85  __aeabi_cdcmple                                  
+0000af0b  __aeabi_cdrcmple                                 
+0000b861  __aeabi_d2iz                                     
+00009da3  __aeabi_dadd                                     
+0000a08d  __aeabi_ddiv                                     
+0000a749  __aeabi_dmul                                     
+00009d99  __aeabi_dsub                                     
+0000be25  __aeabi_errno_addr                               
+0000bbe1  __aeabi_i2d                                      
+00009957  __aeabi_idiv0                                    
+00009957  __aeabi_ldiv0                                    
+0000af91  __aeabi_memclr                                   
+0000af91  __aeabi_memclr4                                  
+0000af91  __aeabi_memclr8                                  
+0000ac33  __aeabi_memcpy                                   
+0000ac33  __aeabi_memcpy4                                  
+0000ac33  __aeabi_memcpy8                                  
+0000af93  __aeabi_memset                                   
+0000af93  __aeabi_memset4                                  
+0000af93  __aeabi_memset8                                  
+200009e0  __aeabi_stderr                                   
+200009d8  __aeabi_stdin                                    
+200009dc  __aeabi_stdout                                   
+0000accf  __aeabi_uldivmod                                 
+ffffffff  __binit__                                        
+ffffffff  __c_args__                                       
+UNDEFED   __mpu_init                                       
+20000000  __stack                                          
+0000ba6d  _c_int00_noargs                                  
+0000be50  _ctypes_                                         
+200008f0  _device                                          
+20000800  _ftable                                          
+200009fc  _lock                                            
+00002427  _nop                                             
+20000968  _stream                                          
+20000bf0  _sys_memory                                      
+UNDEFED   _system_post_cinit                               
+0000be47  _system_pre_init                                 
+20000a00  _unlock                                          
+0000be4b  abort                                            
+0000b785  atoi                                             
+ffffffff  binit                                            
+0000b495  close                                            
+0000bd6d  copysign                                         
+0000bd6d  copysignl                                        
+20000a04  errno                                            
+0000b819  exit                                             
+0000bbb1  finddevice                                       
+0000adf9  fputc                                            
+0000a415  fputs                                            
+0000a921  free                                             
+0000b309  frexp                                            
+0000b309  frexpl                                           
+0000b36d  fseek                                            
+00000000  g_pfnVectors                                     
+0000b975  getdevice                                        
+0000a639  ldexp                                            
+0000a639  ldexpl                                           
+0000bc69  lseek                                            
+0000b5f7  ltoa                                             
+0000a9f9  main                                             
+0000b00d  malloc                                           
+0000bd23  memccpy                                          
+0000bd03  memchr                                           
+0000ac33  memcpy                                           
+0000af99  memset                                           
+0000baa5  minit                                            
+20000be4  parmbuf                                          
+0000b2a1  printf                                           
+0000adf9  putc                                             
+0000bc11  remove                                           
+0000a639  scalbn                                           
+0000a639  scalbnl                                          
+0000a845  setvbuf                                          
+0000bd57  strchr                                           
+0000bd3f  strcmp                                           
+0000bd81  strcpy                                           
+0000bd95  strlen                                           
+0000badd  strncpy                                          
+0000bc11  unlink                                           
+0000bddf  wcslen                                           
+0000bcb9  write                                            
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                             
+-------   ----                                             
+00000000  __TI_static_base__                               
+00000000  g_pfnVectors                                     
+00000008  __SYSMEM_SIZE                                    
+00000779  VL53L1_GetVersion                                
+000007ad  VL53L1_GetProductRevision                        
+000007e7  VL53L1_GetDeviceInfo                             
+00000800  __STACK_SIZE                                     
+00000867  VL53L1_GetRangeStatusString                      
+0000088d  VL53L1_GetPalErrorString                         
+000008af  VL53L1_GetPalStateString                         
+000008d1  VL53L1_GetPalState                               
+000008f1  VL53L1_SetDeviceAddress                          
+0000091d  VL53L1_DataInit                                  
+000009bf  VL53L1_StaticInit                                
+00000a09  VL53L1_WaitDeviceBooted                          
+00000bbf  VL53L1_SetPresetMode                             
+00000c53  VL53L1_GetPresetMode                             
+00000c81  VL53L1_SetDistanceMode                           
+00000d89  VL53L1_GetDistanceMode                           
+00000da9  VL53L1_SetMeasurementTimingBudgetMicroSeconds    
+00000f41  VL53L1_GetMeasurementTimingBudgetMicroSeconds    
+00001081  VL53L1_SetInterMeasurementPeriodMilliSeconds     
+0000109f  VL53L1_GetInterMeasurementPeriodMilliSeconds     
+000010bd  VL53L1_GetNumberOfLimitCheck                     
+000010d7  VL53L1_GetLimitCheckInfo                         
+000010f9  VL53L1_GetLimitCheckStatus                       
+0000119f  VL53L1_SetLimitCheckEnable                       
+00001217  VL53L1_GetLimitCheckEnable                       
+00001261  VL53L1_SetLimitCheckValue                        
+000012d7  VL53L1_GetLimitCheckValue                        
+0000138f  VL53L1_GetLimitCheckCurrent                      
+000013d5  VL53L1_SetUserROI                                
+00001473  VL53L1_GetUserROI                                
+000014df  VL53L1_GetNumberOfSequenceSteps                  
+000014fb  VL53L1_GetSequenceStepsInfo                      
+0000151d  VL53L1_SetSequenceStepEnable                     
+0000155d  VL53L1_GetSequenceStepEnable                     
+00001583  VL53L1_StartMeasurement                          
+0000160d  VL53L1_StopMeasurement                           
+00001727  VL53L1_ClearInterruptAndStartMeasurement         
+00001779  VL53L1_GetMeasurementDataReady                   
+00001797  VL53L1_WaitMeasurementDataReady                  
+00001af3  VL53L1_GetRangingMeasurementData                 
+00001b51  VL53L1_SetTuningParameter                        
+00001ba1  VL53L1_GetTuningParameter                        
+00001bf3  VL53L1_PerformRefSpadManagement                  
+00001ce9  VL53L1_SetXTalkCompensationEnable                
+00001d19  VL53L1_GetXTalkCompensationEnable                
+00001d33  VL53L1_PerformSingleTargetXTalkCalibration       
+00001d69  VL53L1_SetOffsetCalibrationMode                  
+00001db9  VL53L1_PerformOffsetCalibration                  
+00001e25  VL53L1_PerformOffsetSimpleCalibration            
+00001f61  VL53L1_SetCalibrationData                        
+00002051  VL53L1_GetCalibrationData                        
+0000213d  VL53L1_GetOpticalCenter                          
+00002189  VL53L1_SetThresholdConfig                        
+00002353  VL53L1_GetThresholdConfig                        
+00002427  _nop                                             
+00002429  VL53L1_data_init                                 
+0000254b  VL53L1_read_p2p_data                             
+00002621  VL53L1_software_reset                            
+0000267b  VL53L1_set_part_to_part_data                     
+0000275b  VL53L1_get_part_to_part_data                     
+000027f7  VL53L1_set_inter_measurement_period_ms           
+0000283d  VL53L1_get_inter_measurement_period_ms           
+00002881  VL53L1_set_timeouts_us                           
+000028f1  VL53L1_get_timeouts_us                           
+000029c1  VL53L1_set_calibration_repeat_period             
+000029e7  VL53L1_get_calibration_repeat_period             
+00002a0b  VL53L1_set_sequence_config_bit                   
+00002aa3  VL53L1_get_sequence_config_bit                   
+00002b13  VL53L1_set_interrupt_polarity                    
+00002b49  VL53L1_set_refspadchar_config_struct             
+00002b9f  VL53L1_get_refspadchar_config_struct             
+00002bf5  VL53L1_set_range_ignore_threshold                
+00002c29  VL53L1_get_range_ignore_threshold                
+00002c65  VL53L1_get_interrupt_polarity                    
+00002c8d  VL53L1_set_user_zone                             
+00002ccd  VL53L1_get_user_zone                             
+00002d0b  VL53L1_get_mode_mitigation_roi                   
+00002d7b  VL53L1_get_preset_mode_timing_cfg                
+00002e6d  VL53L1_set_preset_mode                           
+000030db  VL53L1_enable_xtalk_compensation                 
+0000317d  VL53L1_get_xtalk_compensation_enable             
+00003197  VL53L1_get_lite_xtalk_margin_kcps                
+000031bb  VL53L1_set_lite_xtalk_margin_kcps                
+000031e1  VL53L1_restore_xtalk_nvm_default                 
+0000321d  VL53L1_disable_xtalk_compensation                
+00003273  VL53L1_get_lite_sigma_threshold                  
+00003297  VL53L1_set_lite_sigma_threshold                  
+000032bd  VL53L1_get_lite_min_count_rate                   
+000032e1  VL53L1_set_lite_min_count_rate                   
+00003307  VL53L1_get_vhv_loopbound                         
+00003333  VL53L1_set_vhv_loopbound                         
+00003367  VL53L1_get_vhv_config                            
+000033a1  VL53L1_set_vhv_config                            
+000033db  VL53L1_init_and_start_range                      
+00003745  VL53L1_stop_range                                
+000037a5  VL53L1_get_measurement_results                   
+000038bf  VL53L1_get_device_results                        
+000039a9  VL53L1_clear_interrupt_and_enable_next_range     
+000039d3  VL53L1_copy_sys_and_core_results_to_range_results
+00003bf9  VL53L1_set_GPIO_interrupt_config                 
+00003c77  VL53L1_set_GPIO_interrupt_config_struct          
+00003cc3  VL53L1_get_GPIO_interrupt_config                 
+00003d2d  VL53L1_set_offset_calibration_mode               
+00003d51  VL53L1_get_offset_calibration_mode               
+00003d73  VL53L1_set_offset_correction_mode                
+00003d97  VL53L1_get_offset_correction_mode                
+00003db9  VL53L1_get_tuning_parm                           
+00004191  VL53L1_set_tuning_parm                           
+0000455d  VL53L1_init_version                              
+0000458b  VL53L1_init_ll_driver_state                      
+000045d7  VL53L1_update_ll_driver_rd_state                 
+000046c1  VL53L1_check_ll_driver_rd_state                  
+00004767  VL53L1_update_ll_driver_cfg_state                
+0000481b  VL53L1_copy_rtn_good_spads_to_buffer             
+00004947  VL53L1_init_system_results                       
+00004a09  VL53L1_i2c_encode_uint16_t                       
+00004a6f  VL53L1_i2c_decode_uint16_t                       
+00004aab  VL53L1_i2c_encode_int16_t                        
+00004b11  VL53L1_i2c_decode_int16_t                        
+00004b5d  VL53L1_i2c_encode_uint32_t                       
+00004bb5  VL53L1_i2c_decode_uint32_t                       
+00004be9  VL53L1_i2c_decode_with_mask                      
+00004c3d  VL53L1_i2c_encode_int32_t                        
+00004c95  VL53L1_i2c_decode_int32_t                        
+00004cd7  VL53L1_start_test                                
+00004d01  VL53L1_set_firmware_enable_register              
+00004d35  VL53L1_enable_firmware                           
+00004d51  VL53L1_disable_firmware                          
+00004d6d  VL53L1_set_powerforce_register                   
+00004da1  VL53L1_enable_powerforce                         
+00004dbd  VL53L1_disable_powerforce                        
+00004dd9  VL53L1_clear_interrupt                           
+00004e07  VL53L1_calc_macro_period_us                      
+00004e59  VL53L1_calc_range_ignore_threshold               
+00004f17  VL53L1_calc_timeout_mclks                        
+00004f3b  VL53L1_calc_encoded_timeout                      
+00004f6b  VL53L1_calc_timeout_us                           
+00004fb9  VL53L1_calc_crosstalk_plane_offset_with_margin   
+00004ff7  VL53L1_calc_decoded_timeout_us                   
+00005025  VL53L1_encode_timeout                            
+00005079  VL53L1_decode_timeout                            
+000050a3  VL53L1_calc_timeout_register_values              
+000051af  VL53L1_encode_vcsel_period                       
+000051d1  VL53L1_decode_unsigned_integer                   
+00005219  VL53L1_encode_unsigned_integer                   
+00005271  VL53L1_spad_number_to_byte_bit_index             
+000052a5  VL53L1_encode_row_col                            
+000052ed  VL53L1_decode_zone_size                          
+00005313  VL53L1_encode_zone_size                          
+00005335  VL53L1_decode_zone_limits                        
+0000540d  VL53L1_is_aperture_location                      
+00005477  VL53L1_calc_mm_effective_spads                   
+0000561d  VL53L1_encode_GPIO_interrupt_config              
+00005673  VL53L1_decode_GPIO_interrupt_config              
+000056dd  VL53L1_set_GPIO_distance_threshold               
+00005711  VL53L1_set_GPIO_rate_threshold                   
+00005745  VL53L1_set_GPIO_thresholds_from_struct           
+00005781  VL53L1_set_ref_spad_char_config                  
+0000589d  VL53L1_set_ssc_config                            
+00005999  VL53L1_get_spad_rate_data                        
+00005a49  VL53L1_low_power_auto_data_init                  
+00005aa9  VL53L1_low_power_auto_data_stop_range            
+00005b11  VL53L1_config_low_power_auto_mode                
+00005b49  VL53L1_low_power_auto_setup_manual_calibration   
+00005bc1  VL53L1_low_power_auto_update_DSS                 
+00005cad  VL53L1_i2c_encode_static_nvm_managed             
+00005d3f  VL53L1_i2c_decode_static_nvm_managed             
+00005dd1  VL53L1_set_static_nvm_managed                    
+00005e13  VL53L1_get_static_nvm_managed                    
+00005e55  VL53L1_i2c_encode_customer_nvm_managed           
+00005f3f  VL53L1_i2c_decode_customer_nvm_managed           
+0000601d  VL53L1_set_customer_nvm_managed                  
+0000605f  VL53L1_get_customer_nvm_managed                  
+000060a1  VL53L1_i2c_encode_static_config                  
+00006203  VL53L1_i2c_decode_static_config                  
+00006365  VL53L1_set_static_config                         
+000063a7  VL53L1_i2c_encode_general_config                 
+0000647f  VL53L1_i2c_decode_general_config                 
+00006557  VL53L1_set_general_config                        
+00006599  VL53L1_i2c_encode_timing_config                  
+0000666b  VL53L1_i2c_encode_dynamic_config                 
+0000673f  VL53L1_set_dynamic_config                        
+00006781  VL53L1_i2c_encode_system_control                 
+000067e1  VL53L1_set_system_control                        
+00006823  VL53L1_i2c_decode_system_results                 
+00006991  VL53L1_get_system_results                        
+000069d3  VL53L1_i2c_decode_core_results                   
+00006a71  VL53L1_i2c_decode_debug_results                  
+00006cd1  VL53L1_i2c_decode_nvm_copy_data                  
+00006ee9  VL53L1_get_nvm_copy_data                         
+00006f2d  __TI_printfi                                     
+0000798b  VL53L1_init_refspadchar_config_struct            
+000079cb  VL53L1_init_ssc_config_struct                    
+00007a05  VL53L1_init_xtalk_config_struct                  
+00007aa9  VL53L1_init_offset_cal_config_struct             
+00007aef  VL53L1_init_tuning_parm_storage_struct           
+00007c03  VL53L1_preset_mode_standard_ranging              
+00007e37  VL53L1_preset_mode_standard_ranging_short_range  
+00007eb5  VL53L1_preset_mode_standard_ranging_long_range   
+00007f33  VL53L1_preset_mode_standard_ranging_mm1_cal      
+00007f79  VL53L1_preset_mode_standard_ranging_mm2_cal      
+00007fbf  VL53L1_preset_mode_timed_ranging                 
+0000802f  VL53L1_preset_mode_timed_ranging_short_range     
+0000809f  VL53L1_preset_mode_timed_ranging_long_range      
+0000810f  VL53L1_preset_mode_low_power_auto_ranging        
+00008157  VL53L1_preset_mode_low_power_auto_short_ranging  
+0000819f  VL53L1_preset_mode_low_power_auto_long_ranging   
+000081e7  VL53L1_preset_mode_singleshot_ranging            
+0000824f  VL53L1_preset_mode_olt                           
+0000828f  VL53L1_run_ref_spad_char                         
+00008417  VL53L1_run_offset_calibration                    
+000088db  VL53L1_run_spad_rate_map                         
+0000898d  VL53L1_run_device_test                           
+00008a61  VL53L1_wait_for_boot_completion                  
+00008ac7  VL53L1_wait_for_firmware_ready                   
+00008b51  VL53L1_wait_for_range_completion                 
+00008bb7  VL53L1_wait_for_test_completion                  
+00008c1d  VL53L1_is_boot_complete                          
+00008c6b  VL53L1_is_firmware_ready                         
+00008c9d  VL53L1_is_new_data_ready                         
+00008d1b  VL53L1_poll_for_boot_completion                  
+00008d6d  VL53L1_poll_for_firmware_ready                   
+00008e11  VL53L1_poll_for_range_completion                 
+00008e75  VL53L1_i2c_init                                  
+00008ebd  VL53L1_write_multi                               
+00008f8f  VL53L1_read_multi                                
+0000908f  VL53L1_write_byte                                
+000090b1  VL53L1_write_word                                
+000090e7  VL53L1_write_dword                               
+00009129  VL53L1_read_byte                                 
+00009147  VL53L1_read_word                                 
+000091b9  VL53L1_read_dword                                
+0000921f  VL53L1_get_tick_count                            
+0000922d  VL53L1_delay                                     
+00009239  VL53L1_get_range_status_string                   
+000092cf  VL53L1_get_pal_state_string                      
+00009389  VL53L1_get_sequence_steps_info                   
+0000944b  VL53L1_get_limit_check_info                      
+000095e5  VL53L1_WriteMulti                                
+0000962f  VL53L1_ReadMulti                                 
+00009675  VL53L1_WrByte                                    
+000096bb  VL53L1_WrWord                                    
+00009701  VL53L1_WrDWord                                   
+00009743  VL53L1_UpdateByte                                
+000097c5  VL53L1_RdByte                                    
+00009807  VL53L1_RdWord                                    
+00009849  VL53L1_RdDWord                                   
+0000988b  VL53L1_GetTickCount                              
+000098a1  VL53L1_GetTimerFrequency                         
+000098b5  VL53L1_WaitMs                                    
+000098cb  VL53L1_WaitUs                                    
+000098e1  VL53L1_WaitValueMaskEx                           
+00009957  __aeabi_idiv0                                    
+00009957  __aeabi_ldiv0                                    
+00009d99  __aeabi_dsub                                     
+00009da3  __aeabi_dadd                                     
+0000a08d  __aeabi_ddiv                                     
+0000a1c3  GPIOPadConfigSet                                 
+0000a415  fputs                                            
+0000a529  SysCtlClockGet                                   
+0000a639  ldexp                                            
+0000a639  ldexpl                                           
+0000a639  scalbn                                           
+0000a639  scalbnl                                          
+0000a749  __aeabi_dmul                                     
+0000a845  setvbuf                                          
+0000a921  free                                             
+0000a9f9  main                                             
+0000aacd  VL53L1_is_firmware_ready_silicon                 
+0000ac33  __aeabi_memcpy                                   
+0000ac33  __aeabi_memcpy4                                  
+0000ac33  __aeabi_memcpy8                                  
+0000ac33  memcpy                                           
+0000accf  __aeabi_uldivmod                                 
+0000ad65  VL53L1_calc_pll_period_us                        
+0000ad85  VL53L1_decode_vcsel_period                       
+0000ada7  VL53L1_decode_row_col                            
+0000adf9  fputc                                            
+0000adf9  putc                                             
+0000ae85  __aeabi_cdcmpeq                                  
+0000ae85  __aeabi_cdcmple                                  
+0000af0b  __aeabi_cdrcmple                                 
+0000af91  __aeabi_memclr                                   
+0000af91  __aeabi_memclr4                                  
+0000af91  __aeabi_memclr8                                  
+0000af93  __aeabi_memset                                   
+0000af93  __aeabi_memset4                                  
+0000af93  __aeabi_memset8                                  
+0000af99  memset                                           
+0000b00d  malloc                                           
+0000b085  __TI_closefile                                   
+0000b169  HOSTlseek                                        
+0000b1d1  HOSTrename                                       
+0000b239  __TI_decompress_lzss                             
+0000b2a1  printf                                           
+0000b309  frexp                                            
+0000b309  frexpl                                           
+0000b36d  fseek                                            
+0000b3d1  __TI_wrt_ok                                      
+0000b435  HOSTopen                                         
+0000b495  close                                            
+0000b4f1  HOSTread                                         
+0000b549  HOSTwrite                                        
+0000b5f7  ltoa                                             
+0000b69d  SysCtlPeripheralReset                            
+0000b6ed  I2CMasterInitExpClk                              
+0000b739  __TI_doflush                                     
+0000b785  atoi                                             
+0000b7d1  GPIOPinConfigure                                 
+0000b819  exit                                             
+0000b861  __aeabi_d2iz                                     
+0000b8a9  HOSTclose                                        
+0000b8ed  HOSTunlink                                       
+0000b931  __TI_auto_init_nobinit_nopinit                   
+0000b975  getdevice                                        
+0000ba35  __TI_writemsg                                    
+0000ba63  C$$IO$$                                          
+0000ba6d  _c_int00_noargs                                  
+0000baa5  minit                                            
+0000badd  strncpy                                          
+0000bb15  SysCtlPeripheralEnable                           
+0000bb49  __TI_cleanup                                     
+0000bb7d  __TI_readmsg                                     
+0000bbb1  finddevice                                       
+0000bbe1  __aeabi_i2d                                      
+0000bc11  remove                                           
+0000bc11  unlink                                           
+0000bc3d  GPIODirModeSet                                   
+0000bc69  lseek                                            
+0000bcb9  write                                            
+0000bce1  VL53L1_get_pal_error_string                      
+0000bd03  memchr                                           
+0000bd23  memccpy                                          
+0000bd3f  strcmp                                           
+0000bd57  strchr                                           
+0000bd6d  copysign                                         
+0000bd6d  copysignl                                        
+0000bd81  strcpy                                           
+0000bd95  strlen                                           
+0000bda9  GPIOPinTypeI2C                                   
+0000bdbb  GPIOPinTypeI2CSCL                                
+0000bdcd  __TI_zero_init_nomemset                          
+0000bddf  wcslen                                           
+0000bdf1  __TI_decompress_none                             
+0000bdff  ResetISR                                         
+0000be0b  I2CMasterEnable                                  
+0000be15  I2CMasterBusy                                    
+0000be1d  I2CMasterSlaveAddrSet                            
+0000be25  __aeabi_errno_addr                               
+0000be2d  SysCtlDelay                                      
+0000be33  I2CMasterControl                                 
+0000be37  I2CMasterDataGet                                 
+0000be3b  I2CMasterDataPut                                 
+0000be47  _system_pre_init                                 
+0000be4b  C$$EXIT                                          
+0000be4b  abort                                            
+0000be50  _ctypes_                                         
+0000c0e0  __TI_Handler_Table_Base                          
+0000c0ec  __TI_Handler_Table_Limit                         
+0000c0f8  __TI_CINIT_Base                                  
+0000c108  __TI_CINIT_Limit                                 
+20000000  __stack                                          
+20000200  __STACK_TOP                                      
+20000800  __STACK_END                                      
+20000800  _ftable                                          
+200008f0  _device                                          
+20000968  _stream                                          
+200009d4  __TI_ft_end                                      
+200009d8  __aeabi_stdin                                    
+200009dc  __aeabi_stdout                                   
+200009e0  __aeabi_stderr                                   
+200009e4  __TI_cleanup_ptr                                 
+200009e8  __TI_dtors_ptr                                   
+200009ec  __TI_enable_exit_profile_output                  
+200009fc  _lock                                            
+20000a00  _unlock                                          
+20000a04  errno                                            
+20000a08  __CIOBUF_                                        
+20000b28  __TI_tmpnams                                     
+20000be4  parmbuf                                          
+20000bf0  _sys_memory                                      
+ffffffff  __TI_pprof_out_hndl                              
+ffffffff  __TI_prof_data_size                              
+ffffffff  __TI_prof_data_start                             
+ffffffff  __binit__                                        
+ffffffff  __c_args__                                       
+ffffffff  binit                                            
+UNDEFED   __mpu_init                                       
+UNDEFED   _system_post_cinit                               
+
+[392 symbols]

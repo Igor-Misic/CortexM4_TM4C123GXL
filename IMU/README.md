@@ -17,4 +17,4 @@ ADC messure from 0 - 3.3V and return digital value 0-4095. For messuring LiPo or
 
 ![alt text](Components.png "Components diagram")
 ![alt text](SPIReadWriteData.png "SPI Read and Write sequence diagram")
-![alt text](API - GetVoltage.png "Get voltage sequence diagram")
+![alt text](GetVoltage.png "Get voltage sequence diagram")
